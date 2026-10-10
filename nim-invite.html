@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>NIM – uitnodiging</title>
+<style>body{margin:0;background:#2c160c;color:#fff;font:18px system-ui,sans-serif}main{max-width:520px;margin:8vh auto;padding:28px}h1{font-size:42px}a,button{display:block;background:#e7b15a;color:#211207;border:0;border-radius:14px;padding:16px;margin:18px 0;text-align:center;text-decoration:none;font:inherit;cursor:pointer}code{display:block;overflow-wrap:anywhere;padding:16px;background:#ffffff18;border-radius:12px}small{color:#dac7b8}</style></head>
+<body><main><h1>Een potje NIM?</h1><p>Je vriend nodigt je uit. Je hoeft niet tegelijk online te zijn.</p><section id="invite" hidden><a id="open">Open in NIM</a><p>Werkt openen niet? Open NIM Online Test en plak deze code bij ‘Uitnodiging openen’:</p><code id="code"></code><button id="copy">Code kopiëren</button><p id="status" aria-live="polite"></p><small>Voor deze test moeten beide spelers de online testversie hebben geïnstalleerd. De gewone winkelversie ondersteunt deze uitnodiging nog niet.</small></section><p id="invalid">Deze uitnodiging is niet compleet. Vraag je vriend om de volledige link.</p></main>
+<script>
+const code=new URLSearchParams(location.hash.slice(1)).get('code');
+if(code && /^[a-f0-9]{32}$/.test(code)){
+ document.getElementById('invite').hidden=false;document.getElementById('invalid').hidden=true;
+ document.getElementById('code').textContent=code;
+ document.getElementById('open').href='intent://join/'+code+'#Intent;scheme=shiftitnim;package=eu.shiftit.nim;end';
+ document.getElementById('copy').onclick=async()=>{try{await navigator.clipboard.writeText(code);document.getElementById('status').textContent='Code gekopieerd.';}catch{document.getElementById('status').textContent='Selecteer en kopieer de code hierboven.';}};
+}
+</script></body></html>
