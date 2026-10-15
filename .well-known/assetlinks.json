@@ -1,14 +1,13 @@
 [
-    {
-        "target":  {
-                       "sha256_cert_fingerprints":  [
-                                                        "11:12:69:9D:44:83:14:BB:BB:94:BB:3C:5F:99:66:58:C8:6A:44:E5:66:C1:0A:95:02:57:AA:6C:7A:A3:EA:BC"
-                                                    ],
-                       "namespace":  "android_app",
-                       "package_name":  "eu.shiftit.nim"
-                   },
-        "relation":  [
-                         "delegate_permission/common.handle_all_urls"
-                     ]
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "eu.shiftit.nim",
+      "sha256_cert_fingerprints": [
+        "11:12:69:9D:44:83:14:BB:BB:94:BB:3C:5F:99:66:58:C8:6A:44:E5:66:C1:0A:95:02:57:AA:6C:7A:A3:EA:BC",
+        "96:31:EC:1F:8B:E8:FB:2E:B0:25:CF:7A:AB:73:38:AD:15:64:0E:C1:DF:C4:8E:E9:24:92:F9:C6:6D:7D:91:99"
+      ]
     }
+  }
 ]
